@@ -20,7 +20,6 @@
             android:textColor="@color/text_dark"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Sport Selector -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +34,6 @@
                 android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Date Selector -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +49,6 @@
                 android:clickable="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Time Selector -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,7 +64,6 @@
                 android:clickable="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Location Selector -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,7 +77,6 @@
                 android:hint="Enter Location"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Number of Players -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,7 +91,6 @@
                 android:inputType="number"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Skill Level Selector -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -111,7 +105,6 @@
                 android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Description -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,7 +120,6 @@
                 android:gravity="top"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Create Button -->
         <Button
             android:id="@+id/createEventButton"
             android:layout_width="match_parent"
@@ -135,7 +127,8 @@
             android:text="Create Event"
             android:textColor="@color/text_dark"
             android:backgroundTint="@color/yellow_accent"
-            android:padding="16dp"/>
+            android:padding="16dp"
+            android:layout_marginBottom="8dp" />
 
     </LinearLayout>
 </ScrollView>
