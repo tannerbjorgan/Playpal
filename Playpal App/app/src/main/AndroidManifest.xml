@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlayPal">
 
+
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
