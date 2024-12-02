@@ -28,6 +28,7 @@ public class AddEventFragment extends Fragment {
     private TextInputEditText description;
     private Button createEventButton;
 
+    // Arrays for dropdowns
     private final String[] sports = {"Basketball", "Football", "Soccer", "Tennis", "Volleyball", "Baseball"};
     private final String[] skillLevels = {"Beginner", "Intermediate", "Advanced", "All Levels"};
 
@@ -55,6 +56,7 @@ public class AddEventFragment extends Fragment {
     }
 
     private void setupDropdowns() {
+        // Set up sports dropdown
         ArrayAdapter<String> sportsAdapter = new ArrayAdapter<>(
                 requireContext(),
                 android.R.layout.simple_dropdown_item_1line,
@@ -62,6 +64,7 @@ public class AddEventFragment extends Fragment {
         );
         sportSelector.setAdapter(sportsAdapter);
 
+        // Set up skill levels dropdown
         ArrayAdapter<String> skillAdapter = new ArrayAdapter<>(
                 requireContext(),
                 android.R.layout.simple_dropdown_item_1line,
@@ -71,6 +74,7 @@ public class AddEventFragment extends Fragment {
     }
 
     private void setupDateTimePickers() {
+        // Date Picker
         dateSelector.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
             DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -87,6 +91,7 @@ public class AddEventFragment extends Fragment {
             datePickerDialog.show();
         });
 
+        // Time Picker
         timeSelector.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
             TimePickerDialog timePickerDialog = new TimePickerDialog(
@@ -158,10 +163,13 @@ public class AddEventFragment extends Fragment {
                     Objects.requireNonNull(description.getText()).toString()
             );
 
+            // Pass event to MainActivity
             ((MainActivity) requireActivity()).addEventToDashboard(newEvent);
 
+            // Show success message
             Toast.makeText(requireContext(), "Event created successfully!", Toast.LENGTH_SHORT).show();
 
+            // Clear inputs and return to dashboard
             clearInputs();
             requireActivity().getSupportFragmentManager().popBackStack();
         } catch (NumberFormatException e) {
