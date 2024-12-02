@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:paddingBottom="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/sportTextJoin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Basketball Game"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/dateTextJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date: 12/01/2024"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#333" />
+
+        <TextView
+            android:id="@+id/timeTextJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time: 06:25"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#333" />
+
+        <TextView
+            android:id="@+id/locationTextJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location: Gym"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#333" />
+
+        <TextView
+            android:id="@+id/playersTextJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number of Players: 8"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#333" />
+
+        <TextView
+            android:id="@+id/skillLevelTextJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skill Level: All Levels"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#333" />
+
+        <TextView
+            android:id="@+id/descriptionTextJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description: hello"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#333" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ButtonJoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Join"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#007BFF"
+        android:padding="12dp"
+        android:elevation="2dp" />
+</LinearLayout>
