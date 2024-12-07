@@ -18,7 +18,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/text_dark"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="24dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Select Sport"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Select Date"
                 android:focusable="false"
-                android:clickable="true"/>
+                android:clickable="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -61,20 +61,22 @@
                 android:layout_height="wrap_content"
                 android:hint="Select Time"
                 android:focusable="false"
-                android:clickable="true"/>
+                android:clickable="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Location Dropdown -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/locationSelector"
+            <AutoCompleteTextView
+                android:id="@+id/locationDropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Location"/>
+                android:hint="Select Location"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -88,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Number of Players Needed"
-                android:inputType="number"/>
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -102,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Skill Level"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -117,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Event Description"
                 android:minLines="3"
-                android:gravity="top"/>
+                android:gravity="top" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

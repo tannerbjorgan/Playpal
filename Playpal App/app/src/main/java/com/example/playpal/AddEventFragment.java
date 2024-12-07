@@ -1,6 +1,6 @@
 package com.example.playpal;
 
-// AddEventFragment.java
+
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
@@ -22,15 +22,16 @@ public class AddEventFragment extends Fragment {
     private AutoCompleteTextView sportSelector;
     private TextInputEditText dateSelector;
     private TextInputEditText timeSelector;
-    private TextInputEditText locationSelector;
+    private AutoCompleteTextView locationDropdown; // Updated to AutoCompleteTextView
     private TextInputEditText playersCount;
     private AutoCompleteTextView skillLevelSelector;
     private TextInputEditText description;
     private Button createEventButton;
 
-    // Arrays for dropdowns
+
     private final String[] sports = {"Basketball", "Football", "Soccer", "Tennis", "Volleyball", "Baseball"};
     private final String[] skillLevels = {"Beginner", "Intermediate", "Advanced", "All Levels"};
+    private final String[] locations = {"Commons Field", "Nonis Sports Field", "Courtyards Building", "Gymnasium"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class AddEventFragment extends Fragment {
         sportSelector = view.findViewById(R.id.sportSelector);
         dateSelector = view.findViewById(R.id.dateSelector);
         timeSelector = view.findViewById(R.id.timeSelector);
-        locationSelector = view.findViewById(R.id.locationSelector);
+        locationDropdown = view.findViewById(R.id.locationDropdown); // Updated
         playersCount = view.findViewById(R.id.playersCount);
         skillLevelSelector = view.findViewById(R.id.skillLevelSelector);
         description = view.findViewById(R.id.description);
@@ -56,7 +57,7 @@ public class AddEventFragment extends Fragment {
     }
 
     private void setupDropdowns() {
-        // Set up sports dropdown
+
         ArrayAdapter<String> sportsAdapter = new ArrayAdapter<>(
                 requireContext(),
                 android.R.layout.simple_dropdown_item_1line,
@@ -64,17 +65,25 @@ public class AddEventFragment extends Fragment {
         );
         sportSelector.setAdapter(sportsAdapter);
 
-        // Set up skill levels dropdown
+
         ArrayAdapter<String> skillAdapter = new ArrayAdapter<>(
                 requireContext(),
                 android.R.layout.simple_dropdown_item_1line,
                 skillLevels
         );
         skillLevelSelector.setAdapter(skillAdapter);
+
+
+        ArrayAdapter<String> locationAdapter = new ArrayAdapter<>(
+                requireContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                locations
+        );
+        locationDropdown.setAdapter(locationAdapter);
     }
 
     private void setupDateTimePickers() {
-        // Date Picker
+
         dateSelector.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
             DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -91,7 +100,7 @@ public class AddEventFragment extends Fragment {
             datePickerDialog.show();
         });
 
-        // Time Picker
+
         timeSelector.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
             TimePickerDialog timePickerDialog = new TimePickerDialog(
@@ -132,8 +141,8 @@ public class AddEventFragment extends Fragment {
             showError("Please select a time");
             return false;
         }
-        if (Objects.requireNonNull(locationSelector.getText()).toString().isEmpty()) {
-            showError("Please enter a location");
+        if (locationDropdown.getText().toString().isEmpty()) { // Updated validation
+            showError("Please select a location");
             return false;
         }
         if (Objects.requireNonNull(playersCount.getText()).toString().isEmpty()) {
@@ -157,19 +166,19 @@ public class AddEventFragment extends Fragment {
                     sportSelector.getText().toString(),
                     Objects.requireNonNull(dateSelector.getText()).toString(),
                     Objects.requireNonNull(timeSelector.getText()).toString(),
-                    Objects.requireNonNull(locationSelector.getText()).toString(),
+                    locationDropdown.getText().toString(), // Updated
                     Integer.parseInt(Objects.requireNonNull(playersCount.getText()).toString()),
                     skillLevelSelector.getText().toString(),
                     Objects.requireNonNull(description.getText()).toString()
             );
 
-            // Pass event to MainActivity
+
             ((MainActivity) requireActivity()).addEventToDashboard(newEvent);
 
-            // Show success message
+
             Toast.makeText(requireContext(), "Event created successfully!", Toast.LENGTH_SHORT).show();
 
-            // Clear inputs and return to dashboard
+
             clearInputs();
             requireActivity().getSupportFragmentManager().popBackStack();
         } catch (NumberFormatException e) {
@@ -181,7 +190,7 @@ public class AddEventFragment extends Fragment {
         sportSelector.setText("");
         dateSelector.setText("");
         timeSelector.setText("");
-        locationSelector.setText("");
+        locationDropdown.setText(""); // Updated
         playersCount.setText("");
         skillLevelSelector.setText("");
         description.setText("");
